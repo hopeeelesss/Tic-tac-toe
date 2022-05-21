@@ -5,8 +5,7 @@ module tictactoe {
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
     requires java.management;
-
-    opens tictactoe to javafx.fxml;
+    requires static lombok;
     exports tictactoe;
     exports tictactoe.guicontrollers;
     opens tictactoe.guicontrollers to javafx.fxml;

@@ -8,4 +8,6 @@ public interface Player {
     void makeStep(int cellNumber) throws InstanceAlreadyExistsException;
     Integer getFigureInt();
     String getFigureStr();
+
+    Boolean getAlive();
 }

@@ -1,12 +1,13 @@
 package tictactoe.core.impl;
 
+import lombok.Getter;
 import tictactoe.core.Field;
 
 import javax.management.InstanceAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
+@Getter
 public class FieldImpl implements Field {
     /**
      * @value
@@ -155,11 +156,16 @@ public class FieldImpl implements Field {
     @Override
     public List<Integer> getEmptyCellsList() {
         List<Integer> emptyCellsList = new ArrayList<>();
-        getFieldList().forEach(e -> {
-            if (Objects.isNull(e)) {
-                emptyCellsList.add(e);
+        for(int i=0;i<9;++i){
+            if(fieldList.get(i)==null){
+                emptyCellsList.add(i);
             }
-        });
+        }
+//        getFieldList().forEach(e -> {
+//            if (Objects.isNull(e)) {
+//                emptyCellsList.add(fieldList.indexOf(e));
+//            }
+//        });
         return emptyCellsList;
     }
 
