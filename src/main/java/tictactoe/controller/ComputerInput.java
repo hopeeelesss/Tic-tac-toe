@@ -1,7 +1,7 @@
-package org.example.controller;
+package tictactoe.controller;
 
-import org.example.core.Player;
-import org.example.core.impl.ComputerPlayer;
+import tictactoe.core.Player;
+import tictactoe.core.impl.ComputerPlayer;
 
 public class ComputerInput {
     private ComputerPlayer player;

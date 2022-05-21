@@ -1,4 +1,4 @@
-package org.example.core;
+package tictactoe.core;
 
 public interface Figure {
 }

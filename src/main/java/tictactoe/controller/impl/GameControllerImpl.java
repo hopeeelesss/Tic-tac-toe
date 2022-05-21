@@ -1,10 +1,10 @@
-package org.example.controller.impl;
+package tictactoe.controller.impl;
 
-import org.example.controller.ComputerInput;
-import org.example.controller.ConsoleInputUtil;
-import org.example.controller.GameController;
-import org.example.core.Field;
-import org.example.core.Player;
+import tictactoe.controller.ComputerInput;
+import tictactoe.controller.ConsoleInputUtil;
+import tictactoe.controller.GameController;
+import tictactoe.core.Field;
+import tictactoe.core.Player;
 
 public class GameControllerImpl implements GameController {
     private final Field field;

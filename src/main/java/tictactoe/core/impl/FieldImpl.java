@@ -1,7 +1,7 @@
-package org.example.core.impl;
+package tictactoe.core.impl;
 
 import lombok.Getter;
-import org.example.core.Field;
+import tictactoe.core.Field;
 
 import javax.management.InstanceAlreadyExistsException;
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
-package org.example.controller;
+package tictactoe.controller;
 
-import org.example.core.Player;
+import tictactoe.core.Player;
 
 import java.util.Scanner;
 
