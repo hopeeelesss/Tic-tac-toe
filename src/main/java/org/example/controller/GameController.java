@@ -1,6 +1,6 @@
-package controller;
+package org.example.controller;
 
-import core.Player;
+import org.example.core.Player;
 
 public interface GameController {
     void startGame();

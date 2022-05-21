@@ -1,4 +1,4 @@
-package core;
+package org.example.core;
 
 public interface Figure {
 }

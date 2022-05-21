@@ -1,4 +1,4 @@
-package core;
+package org.example.core;
 
 import javax.management.InstanceAlreadyExistsException;
 
@@ -8,4 +8,6 @@ public interface Player {
     void makeStep(int cellNumber) throws InstanceAlreadyExistsException;
     Integer getFigureInt();
     String getFigureStr();
+
+    Boolean getAlive();
 }
