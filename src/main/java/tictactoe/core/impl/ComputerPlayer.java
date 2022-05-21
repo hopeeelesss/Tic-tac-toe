@@ -107,17 +107,6 @@ public class ComputerPlayer implements Player {
         return result;
     }
 
-    private Integer StepToWin(){
-        return null;
-    }
-
-    private Integer StepToSurvive(){
-        return null;
-    }
-
-    private Integer RandomStep(){
-        return null;
-    }
 
     @Override
     public void makeStep(int cellNumber) throws InstanceAlreadyExistsException {
