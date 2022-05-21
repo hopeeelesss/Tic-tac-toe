@@ -1,4 +1,4 @@
-package core;
+package tictactoe.core;
 
 public interface Figure {
 }

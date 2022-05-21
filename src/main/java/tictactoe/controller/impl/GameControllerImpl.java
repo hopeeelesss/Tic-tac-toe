@@ -1,9 +1,10 @@
-package controller.impl;
+package tictactoe.controller.impl;
 
-import controller.ConsoleInputUtil;
-import controller.GameController;
-import core.Field;
-import core.Player;
+
+import tictactoe.controller.ConsoleInputUtil;
+import tictactoe.controller.GameController;
+import tictactoe.core.Field;
+import tictactoe.core.Player;
 
 import javax.management.InstanceAlreadyExistsException;
 import java.util.Scanner;

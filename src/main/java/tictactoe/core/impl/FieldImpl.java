@@ -1,6 +1,6 @@
-package core.impl;
+package tictactoe.core.impl;
 
-import core.Field;
+import tictactoe.core.Field;
 
 import javax.management.InstanceAlreadyExistsException;
 import java.util.ArrayList;

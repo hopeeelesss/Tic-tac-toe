@@ -1,11 +1,11 @@
-package launcher;
+package tictactoe.launcher;
 
-import controller.GameController;
-import controller.impl.GameControllerImpl;
-import core.Field;
-import core.Player;
-import core.impl.FieldImpl;
-import core.impl.PlayerImpl;
+import tictactoe.controller.GameController;
+import tictactoe.controller.impl.GameControllerImpl;
+import tictactoe.core.Field;
+import tictactoe.core.Player;
+import tictactoe.core.impl.FieldImpl;
+import tictactoe.core.impl.PlayerImpl;
 
 public class Main {
     public static void main(String[] args) {

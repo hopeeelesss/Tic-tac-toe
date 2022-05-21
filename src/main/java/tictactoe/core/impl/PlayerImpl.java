@@ -1,7 +1,7 @@
-package core.impl;
+package tictactoe.core.impl;
 
-import core.Field;
-import core.Player;
+import tictactoe.core.Field;
+import tictactoe.core.Player;
 
 import javax.management.InstanceAlreadyExistsException;
 

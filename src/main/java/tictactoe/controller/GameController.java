@@ -1,6 +1,6 @@
-package controller;
+package tictactoe.controller;
 
-import core.Player;
+import tictactoe.core.Player;
 
 public interface GameController {
     void startGame();
