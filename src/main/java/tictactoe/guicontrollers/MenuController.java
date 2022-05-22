@@ -1,21 +1,33 @@
 package tictactoe.guicontrollers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 
 public class MenuController {
-    @FXML
-    public Button PvPmode;
 
     @FXML
-    public Button PvEmode;
+    private Button PvEmodeButton;
 
     @FXML
-    public Button Settings;
+    private Button PvPmodeButton;
 
     @FXML
-    public void initialize(){
+    private Button SettingsButton;
+
+    @FXML
+    void PvEmode(ActionEvent event) {
 
     }
+
+    @FXML
+    void PvPmode(ActionEvent event) {
+
+    }
+
+    @FXML
+    void Settings(ActionEvent event) {
+
+    }
+
 }

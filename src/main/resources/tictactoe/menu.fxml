@@ -16,17 +16,17 @@
             <Font name="Cambria Bold" size="36.0" />
          </font>
       </Text>
-      <Button fx:id="PvPmode" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Игра с другом">
+      <Button fx:id="PvPmodeButton" mnemonicParsing="false" onAction="#PvPmode" prefHeight="40.0" prefWidth="150.0" text="Игра с другом">
          <font>
             <Font name="Cambria Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="PvEmode" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Игра с ИИ">
+      <Button fx:id="PvEmodeButton" mnemonicParsing="false" onAction="#PvEmode" prefHeight="40.0" prefWidth="150.0" text="Игра с ИИ">
          <font>
             <Font name="Cambria Bold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="Settings" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Настройки">
+      <Button fx:id="SettingsButton" mnemonicParsing="false" onAction="#Settings" prefHeight="40.0" prefWidth="150.0" text="Настройки">
          <font>
             <Font name="Cambria Bold" size="18.0" />
          </font>

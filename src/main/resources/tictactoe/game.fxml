@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -14,61 +15,108 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.guicontrollers.GameController">
    <children>
-      <MenuBar layoutY="574.0" prefHeight="25.0" prefWidth="800.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Покинуть игру">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Предложить ничью">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Перезапустить игру">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Справка">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-              </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-      <GridPane layoutX="250.0" layoutY="150.0" prefHeight="300.0" prefWidth="300.0" style="-fx-border-width: 1;">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-      </GridPane>
       <Text layoutX="150.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player1" wrappingWidth="55.310546875">
          <font>
             <Font name="Candara Bold" size="14.0" />
          </font>
       </Text>
-      <Text layoutX="650.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player2" wrappingWidth="55.310546875">
+      <Text layoutX="600.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player2" wrappingWidth="55.310546875">
          <font>
             <Font name="Cambria Bold" size="14.0" />
          </font>
       </Text>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="128.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/profile.jpg" />
+            <Image url="@../../../../../Tic-tac-toe/src/main/resources/com/example/img/profile.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="628.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="578.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/profile.jpg" />
+            <Image url="@../../../../../Tic-tac-toe/src/main/resources/com/example/img/profile.jpg" />
          </image>
       </ImageView>
+      <GridPane alignment="CENTER" layoutX="250.0" layoutY="200.0" prefHeight="300.0" prefWidth="300.0" style="-fx-border-width: 1;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="field1" mnemonicParsing="false" onAction="#fieldPressed" prefHeight="100.0" prefWidth="100.0">
+               <font>
+                  <Font name="Cambria Bold" size="52.0" />
+               </font>
+            </Button>
+            <Button fx:id="field2" mnemonicParsing="false" onAction="#fieldPressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Cambria Bold" size="52.0" />
+               </font>
+            </Button>
+            <Button fx:id="field3" mnemonicParsing="false" onAction="#fieldPressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Cambria Bold" size="52.0" />
+               </font>
+            </Button>
+            <Button fx:id="field4" mnemonicParsing="false" onAction="#fieldPressed" prefHeight="100.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Cambria Bold" size="52.0" />
+               </font>
+            </Button>
+            <Button fx:id="field5" mnemonicParsing="false" onAction="#fieldPressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Cambria Bold" size="52.0" />
+               </font>
+            </Button>
+            <Button fx:id="field6" mnemonicParsing="false" onAction="#fieldPressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Cambria Bold" size="52.0" />
+               </font>
+            </Button>
+            <Button fx:id="field7" mnemonicParsing="false" onAction="#fieldPressed" prefHeight="100.0" prefWidth="100.0" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Cambria Bold" size="52.0" />
+               </font>
+            </Button>
+            <Button fx:id="field8" mnemonicParsing="false" onAction="#fieldPressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Cambria Bold" size="52.0" />
+               </font>
+            </Button>
+            <Button fx:id="field9" mnemonicParsing="false" onAction="#fieldPressed" prefHeight="100.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Cambria Bold" size="52.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <MenuBar layoutY="574.0" prefHeight="25.0" prefWidth="800.0">
+        <menus>
+          <Menu fx:id="leaveButton" mnemonicParsing="false" onAction="#leave" text="Покинуть игру">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu fx:id="offerDrawButton" mnemonicParsing="false" onAction="#offerDraw" text="Предложить ничью">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu fx:id="restartGameButton" mnemonicParsing="false" onAction="#restartGame" text="Перезапустить игру">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu fx:id="helpButton" mnemonicParsing="false" onAction="#help" text="Справка">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </AnchorPane>
