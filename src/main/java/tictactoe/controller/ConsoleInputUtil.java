@@ -9,7 +9,7 @@ public class ConsoleInputUtil {
 
     public static void inputAndMakeStep(Player player) {
         while (true) {
-            System.out.println("Ход играющего за " + player.getFigureStr() + " :");
+            System.out.println("It's the step of player playing with " + player.getFigureStr() + " :");
             try {
                 player.makeStep(scanner.nextInt());
                 break;

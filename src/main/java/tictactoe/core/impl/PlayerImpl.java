@@ -12,7 +12,9 @@ import javax.management.InstanceAlreadyExistsException;
 @Setter
 @AllArgsConstructor
 public class PlayerImpl implements Player {
-    private final Field field;
+    @Getter
+    @Setter
+    private Field field;
     private String name;
     private final Integer figureInt;
     private final String figureStr;
@@ -23,7 +25,7 @@ public class PlayerImpl implements Player {
         this.field = field;
         this.name = playerName;
         this.figureInt = figureInt;
-        alive=true;
+        alive = true;
         if (figureInt == 0) {
             figureStr = "O";
         } else {

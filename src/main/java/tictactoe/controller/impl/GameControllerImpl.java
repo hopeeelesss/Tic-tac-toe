@@ -25,21 +25,23 @@ public class GameControllerImpl implements GameController {
             computerInput = new ComputerInput(player1);
         if(!player2.getAlive())
             computerInput = new ComputerInput(player2);
+
         while (field.getEmptyCellsList().size() != 0) {
-            if(player1.getAlive()){
+            if (player1.getAlive()){
                 ConsoleInputUtil.inputAndMakeStep(player1);
             }
             else {
                 computerInput.Move();
             }
+
             field.displayFieldInConsole();
             if (gameIsOver()) {
                 return;
             }
-            if(player2.getAlive()){
+            if (player2.getAlive()){
                 ConsoleInputUtil.inputAndMakeStep(player2);
             }
-            else{
+            else {
                 computerInput.Move();
             }
             field.displayFieldInConsole();

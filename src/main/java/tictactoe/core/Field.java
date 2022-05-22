@@ -1,7 +1,5 @@
 package tictactoe.core;
 
-import lombok.Getter;
-
 import javax.management.InstanceAlreadyExistsException;
 import java.util.List;
 

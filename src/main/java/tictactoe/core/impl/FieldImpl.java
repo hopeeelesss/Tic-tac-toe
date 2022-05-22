@@ -32,7 +32,7 @@ public class FieldImpl implements Field {
     @Override
     public void inputFigure(int cellNumber, int figure) throws InstanceAlreadyExistsException {
         if (!Objects.isNull(getFieldList().get(cellNumber))) {
-            throw new InstanceAlreadyExistsException("Клетка уже занята");
+            throw new InstanceAlreadyExistsException("The field is already taken");
         }
         fieldList.set(cellNumber, figure);
     }
@@ -169,6 +169,7 @@ public class FieldImpl implements Field {
         return emptyCellsList;
     }
 
+    @Override
     public List<Integer> getFieldList() {
         return new ArrayList<>(fieldList);
     }

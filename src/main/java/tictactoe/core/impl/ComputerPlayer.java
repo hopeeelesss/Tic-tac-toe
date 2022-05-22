@@ -14,11 +14,15 @@ import java.util.Objects;
 @Getter
 @Setter
 public class ComputerPlayer implements Player {
-    private final Field field;
+    @Getter
+    @Setter
+    private Field field;
     private String name;
     private final Integer figureInt;
     private final String figureStr;
     private Boolean alive;
+    @Getter
+    private int decision;
 
     private ArrayList<HashSet<Integer>> sets = new ArrayList<>();
 
@@ -51,8 +55,8 @@ public class ComputerPlayer implements Player {
 
     }
 
-    public void ThinkAndMakeStep(){
-        int decision=0;
+    public void Think(){
+        int decision;
         List<Integer> emptyCells = field.getEmptyCellsList();
         List<Integer> analyzeResults = new ArrayList<>();
         for (HashSet<Integer> set: sets
@@ -72,14 +76,7 @@ public class ComputerPlayer implements Player {
             }
         }
 
-
-        try {
-            field.inputFigure(decision, figureInt);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
+        this.decision = decision;
     }
 
     private int GetIndexToMove(HashSet<Integer> set, List<Integer> emptyCells){
