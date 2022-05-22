@@ -16,6 +16,13 @@ public class GameApplication extends Application {
         stage.setScene(scene);
         stage.show();
     }
+    public void setGameStage(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource("game.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        stage.setTitle("Tic-tac-toe");
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public static void main(String[] args) {
         launch();
