@@ -1,14 +1,10 @@
-package tictactoe.core;
-
-import javax.management.InstanceAlreadyExistsException;
+package tictactoe.model;
 
 public interface Player {
     String getName();
     void setName(String name);
-    void makeStep(int cellNumber) throws InstanceAlreadyExistsException;
     Integer getFigureInt();
     String getFigureStr();
-    Boolean getAlive();
     Field getField();
     void setField(Field field);
 }

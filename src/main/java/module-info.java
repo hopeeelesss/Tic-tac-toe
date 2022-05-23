@@ -7,6 +7,8 @@ module tictactoe {
     requires java.management;
     requires static lombok;
     exports tictactoe;
-    exports tictactoe.guicontrollers;
-    opens tictactoe.guicontrollers to javafx.fxml;
+    exports tictactoe.controller;
+    opens tictactoe.controller to javafx.fxml;
+    exports tictactoe.controller.impl;
+    opens tictactoe.controller.impl to javafx.fxml;
 }

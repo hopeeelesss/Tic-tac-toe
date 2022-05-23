@@ -1,11 +1,10 @@
-package tictactoe.core.impl;
+package tictactoe.model.impl;
 
 import lombok.Getter;
 import lombok.Setter;
-import tictactoe.core.Field;
-import tictactoe.core.Player;
+import tictactoe.model.Field;
+import tictactoe.model.Player;
 
-import javax.management.InstanceAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -13,28 +12,27 @@ import java.util.Objects;
 
 @Getter
 @Setter
-public class ComputerPlayer implements Player {
+public class ComputerPlayerImpl implements Player {
     @Getter
     @Setter
     private Field field;
     private String name;
     private final Integer figureInt;
     private final String figureStr;
-    private Boolean alive;
     @Getter
     private int decision;
 
     private ArrayList<HashSet<Integer>> sets = new ArrayList<>();
 
-    public ComputerPlayer(String playerName, Field field, Integer figureInt) {
-        this.name=playerName;
-        this.field=field;
-        this.figureInt=figureInt;
-        if(figureInt==0){
-            this.figureStr="0";
-        }else
-            this.figureStr="X";
-        this.setAlive(false);
+    public ComputerPlayerImpl(String playerName, Field field, Integer figureInt) {
+        this.name = playerName;
+        this.field = field;
+        this.figureInt = figureInt;
+
+        if (figureInt == 0){
+            this.figureStr = "0";
+        } else
+            this.figureStr = "X";
 
         InitializeSets();
         System.out.println(sets);
@@ -55,7 +53,7 @@ public class ComputerPlayer implements Player {
 
     }
 
-    public void Think(){
+    public void MakeDecision() {
         int decision;
         List<Integer> emptyCells = field.getEmptyCellsList();
         List<Integer> analyzeResults = new ArrayList<>();
@@ -102,11 +100,5 @@ public class ComputerPlayer implements Player {
             }
         }
         return result;
-    }
-
-
-    @Override
-    public void makeStep(int cellNumber) throws InstanceAlreadyExistsException {
-        field.inputFigure(cellNumber,figureInt);
     }
 }

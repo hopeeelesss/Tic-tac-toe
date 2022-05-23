@@ -1,12 +1,10 @@
-package tictactoe.core.impl;
+package tictactoe.model.impl;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import tictactoe.core.Field;
-import tictactoe.core.Player;
-
-import javax.management.InstanceAlreadyExistsException;
+import tictactoe.model.Field;
+import tictactoe.model.Player;
 
 @Getter
 @Setter
@@ -15,27 +13,26 @@ public class PlayerImpl implements Player {
     @Getter
     @Setter
     private Field field;
+    @Getter
+    @Setter
     private String name;
-    private final Integer figureInt;
-    private final String figureStr;
+    @Getter
+    @Setter
+    private Integer figureInt;
 
-    private Boolean alive;
+    @Getter
+    @Setter
+    private String figureStr;
 
     public PlayerImpl(String playerName, Field field, Integer figureInt) {
         this.field = field;
         this.name = playerName;
         this.figureInt = figureInt;
-        alive = true;
+
         if (figureInt == 0) {
             figureStr = "O";
         } else {
             figureStr = "X";
         }
-    }
-
-
-    @Override
-    public void makeStep(int cellNumber) throws InstanceAlreadyExistsException {
-        field.inputFigure(cellNumber, figureInt);
     }
 }

@@ -1,40 +1,31 @@
-package tictactoe.core.impl;
+package tictactoe.service.impl;
 
 import lombok.Getter;
-import tictactoe.core.Field;
+import lombok.Setter;
+import tictactoe.model.Field;
+import tictactoe.model.Player;
+import tictactoe.service.FieldService;
 
 import javax.management.InstanceAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-@Getter
-public class FieldImpl implements Field {
-    /**
-     * @value
-     *  * Integer figures equivalent
-     *  * 0 - O
-     *  * 1 - X
-     *  * null - empty cell
-     *  Field is hold as arraylist. Field cells interpretation as GUI
-     *  * 0 1 2
-     *  * 3 4 5
-     *  * 6 7 8
-     */
-    private final List<Integer> fieldList;
 
-    public FieldImpl() {
-        this.fieldList = new ArrayList<>();
-        for (int i = 0; i < 9; i++) {
-            fieldList.add(null);
-        }
+public class FieldServiceImpl implements FieldService {
+    @Getter
+    @Setter
+    private Field field;
+
+    public FieldServiceImpl(Field field) {
+        this.field = field;
     }
 
     @Override
-    public void inputFigure(int cellNumber, int figure) throws InstanceAlreadyExistsException {
-        if (!Objects.isNull(getFieldList().get(cellNumber))) {
+    public void makeStep(Player player, int cellNumber) throws InstanceAlreadyExistsException {
+        if (!Objects.isNull(field.getFieldList().get(cellNumber))) {
             throw new InstanceAlreadyExistsException("The field is already taken");
         }
-        fieldList.set(cellNumber, figure);
+        field.getFieldList().set(cellNumber, player.getFigureInt());
     }
 
     /**
@@ -56,7 +47,7 @@ public class FieldImpl implements Field {
             return 1;
         }
 
-        if (getEmptyCellsList().size() == 0) {
+        if (field.getEmptyCellsList().size() == 0) {
             return -1;
         } else {
             return -2;
@@ -68,7 +59,7 @@ public class FieldImpl implements Field {
         int i = 0;
         while (i < 9) {
             row.clear();
-            row.addAll(getFieldList().subList(i, i + 3));
+            row.addAll(field.getFieldList().subList(i, i + 3));
             if (row.stream().anyMatch(Objects::isNull)) {
                 i += 3;
                 continue;
@@ -88,9 +79,9 @@ public class FieldImpl implements Field {
         int i = 0;
         while (i < 3) {
             column.clear();
-            column.add(getFieldList().get(i));
-            column.add(getFieldList().get(i + 3));
-            column.add(getFieldList().get(i + 6));
+            column.add(field.getFieldList().get(i));
+            column.add(field.getFieldList().get(i + 3));
+            column.add(field.getFieldList().get(i + 6));
             if (column.stream().anyMatch(Objects::isNull)) {
                 i++;
                 continue;
@@ -112,9 +103,9 @@ public class FieldImpl implements Field {
         //2 4 6
         while (i < 4) {
             diagonal.clear();
-            diagonal.add(getFieldList().get(i));
-            diagonal.add(getFieldList().get(4));
-            diagonal.add(getFieldList().get(8 - i));
+            diagonal.add(field.getFieldList().get(i));
+            diagonal.add(field.getFieldList().get(4));
+            diagonal.add(field.getFieldList().get(8 - i));
             if (diagonal.stream().anyMatch(Objects::isNull)) {
                 i += 2;
                 continue;
@@ -131,7 +122,7 @@ public class FieldImpl implements Field {
 
     @Override
     public void displayFieldInConsole() {
-        List<Integer> fieldList = getFieldList();
+        List<Integer> fieldList = field.getFieldList();
         List<String> displayedField = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
             if (Objects.isNull(fieldList.get(i))) {
@@ -154,23 +145,12 @@ public class FieldImpl implements Field {
     }
 
     @Override
-    public List<Integer> getEmptyCellsList() {
-        List<Integer> emptyCellsList = new ArrayList<>();
-        for(int i=0;i<9;++i){
-            if(fieldList.get(i)==null){
-                emptyCellsList.add(i);
-            }
-        }
-//        getFieldList().forEach(e -> {
-//            if (Objects.isNull(e)) {
-//                emptyCellsList.add(fieldList.indexOf(e));
-//            }
-//        });
-        return emptyCellsList;
+    public boolean fieldIsFull() {
+        return getField().getEmptyCellsList().size() == 0;
     }
 
     @Override
-    public List<Integer> getFieldList() {
-        return new ArrayList<>(fieldList);
+    public void clearField() {
+        getField().initializeField();
     }
 }
