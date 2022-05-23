@@ -120,7 +120,7 @@ public class GuiGameControllerImpl implements GuiGameController {
                 a.showAndWait();
             }
             fieldService.clearField();
-            playerService.updateStepOrder();
+            playerService.setStepOrder(1);
             clearStage();
             //TODO: show updates scores
         }

@@ -8,15 +8,14 @@ import java.util.List;
 @Getter
 public class FieldImpl implements Field {
     /**
-     * @value
-     *  * Integer figures equivalent
-     *  * 0 - O
-     *  * 1 - X
-     *  * null - empty cell
+     *  Integer figures equivalent
+     *  0 - O
+     *  1 - X
+     *  null - empty cell
      *  Field is hold as arraylist. Field cells interpretation as GUI
-     *  * 0 1 2
-     *  * 3 4 5
-     *  * 6 7 8
+     *  0 1 2
+     *  3 4 5
+     *  6 7 8
      */
     @Getter
     private List<Integer> fieldList;

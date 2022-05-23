@@ -13,7 +13,9 @@ public class PlayerServiceImpl implements PlayerService {
     @Setter
     @Getter
     private Player player2;
-    private Integer whoseStep = 1;
+    @Getter
+    @Setter
+    private Integer stepOrder = 1;
 
     @Getter
     private int player1Score = 0;
@@ -31,13 +33,13 @@ public class PlayerServiceImpl implements PlayerService {
         player2.setField(field);
         player1Score = 0;
         player2Score = 0;
-        this.whoseStep = 1;
+        this.stepOrder = 1;
     }
 
     @Override
     public Player getCurrentPlayer() {
         Player result;
-        if (whoseStep % 2 == 1) {
+        if (stepOrder % 2 == 1) {
             result = player1;
 
         } else {
@@ -48,7 +50,7 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public void updateStepOrder() {
-        ++whoseStep;
+        ++stepOrder;
     }
 
     @Override

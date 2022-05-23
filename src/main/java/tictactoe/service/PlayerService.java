@@ -12,4 +12,5 @@ public interface PlayerService {
     void incrementPlayer2Score();
     int getPlayer1Score();
     int getPlayer2Score();
+    void setStepOrder(Integer stepOrder);
 }
