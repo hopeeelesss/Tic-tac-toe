@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text layoutX="150.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player1" wrappingWidth="55.310546875">
          <font>
@@ -27,12 +27,12 @@
       </Text>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="128.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/profile.jpg" />
+            <Image url="@../img/user.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="578.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../img/profile.jpg" />
+            <Image url="@../img/user.png" />
          </image>
       </ImageView>
       <GridPane alignment="CENTER" layoutX="250.0" layoutY="200.0" prefHeight="300.0" prefWidth="300.0" style="-fx-border-width: 1;">
@@ -99,11 +99,6 @@
           <Menu fx:id="leaveButton" mnemonicParsing="false" onAction="#leave" text="Покинуть игру">
             <items>
               <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu fx:id="offerDrawButton" mnemonicParsing="false" onAction="#offerDraw" text="Предложить ничью">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
           <Menu fx:id="restartGameButton" mnemonicParsing="false" onAction="#restartGame" text="Перезапустить игру">
