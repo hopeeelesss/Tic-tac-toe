@@ -3,6 +3,7 @@ package tictactoe;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import tictactoe.controller.GuiGameController;
 import tictactoe.controller.GuiMenuController;
@@ -18,6 +19,7 @@ import tictactoe.service.impl.FieldServiceImpl;
 import tictactoe.service.impl.PlayerServiceImpl;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 public class GameApplication extends Application {
     @Override
@@ -26,11 +28,8 @@ public class GameApplication extends Application {
 
         GuiMenuController guiMenuController = new GuiMenuControllerImpl();
         fxmlLoader.setController(guiMenuController);
-
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        stage.setTitle("Tic-tac-toe");
-        stage.setScene(scene);
-        stage.show();
+        setStage(stage,scene);
     }
 
     public void setPvPGameStage(Stage stage) throws IOException {
@@ -48,9 +47,7 @@ public class GameApplication extends Application {
         fxmlLoader.setController(guiGameController);
 
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        stage.setTitle("Tic-tac-toe");
-        stage.setScene(scene);
-        stage.show();
+        setStage(stage,scene);
     }
 
     public void setPvEGameStage(Stage stage) throws IOException {
@@ -68,10 +65,16 @@ public class GameApplication extends Application {
         fxmlLoader.setController(guiGameController);
 
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        setStage(stage,scene);
+    }
+
+    public void setStage(Stage stage, Scene scene){
         stage.setTitle("Tic-tac-toe");
+        stage.getIcons().add(new Image("file:src/main/resources/img/icon.png"));
         stage.setScene(scene);
         stage.show();
     }
+
 
     public static void main(String[] args) {
         launch();

@@ -62,9 +62,6 @@ public class GuiGameControllerImpl implements GuiGameController {
     private Menu leaveButton;
 
     @FXML
-    private Menu offerDrawButton;
-
-    @FXML
     private Menu restartGameButton;
 
     @Override
