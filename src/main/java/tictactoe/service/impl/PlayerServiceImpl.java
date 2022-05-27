@@ -1,25 +1,17 @@
 package tictactoe.service.impl;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import tictactoe.model.Field;
 import tictactoe.model.Player;
 import tictactoe.service.PlayerService;
 
+@Data
 public class PlayerServiceImpl implements PlayerService {
-    @Setter
-    @Getter
-    private Player player1;
-    @Setter
-    @Getter
-    private Player player2;
-    @Getter
-    @Setter
-    private Integer stepOrder = 1;
 
-    @Getter
+    private Player player1;
+    private Player player2;
+    private Integer stepOrder = 1;
     private int player1Score = 0;
-    @Getter
     private int player2Score = 0;
 
     public PlayerServiceImpl(Player player1, Player player2) {
@@ -39,13 +31,12 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public Player getCurrentPlayer() {
         Player result;
-        if (stepOrder % 2 == 1) {
-            result = player1;
-
-        } else {
-            result = player2;
-        }
+        result = stepOrder % 2 == 1 ? player1 : player2;
         return result;
+    }
+
+    public Integer getStepOrder() {
+        return stepOrder;
     }
 
     @Override
