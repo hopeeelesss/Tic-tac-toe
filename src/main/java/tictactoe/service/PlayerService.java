@@ -13,4 +13,6 @@ public interface PlayerService {
     int getPlayer1Score();
     int getPlayer2Score();
     void setStepOrder(Integer stepOrder);
+
+    Integer getStepOrder();
 }

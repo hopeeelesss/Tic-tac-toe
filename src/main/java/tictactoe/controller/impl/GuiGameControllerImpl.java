@@ -2,10 +2,10 @@ package tictactoe.controller.impl;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,8 +15,6 @@ import tictactoe.model.impl.ComputerPlayerImpl;
 import tictactoe.model.impl.FieldImpl;
 import tictactoe.service.FieldService;
 import tictactoe.service.PlayerService;
-
-import javax.management.InstanceAlreadyExistsException;
 
 public class GuiGameControllerImpl implements GuiGameController {
     @Setter
@@ -64,11 +62,24 @@ public class GuiGameControllerImpl implements GuiGameController {
     @FXML
     private Menu restartGameButton;
 
+    @FXML
+    private Text playerScore1;
+
+    @FXML
+    private Text playerScore2;
+
+    @FXML
+    private Text moveText;
+
     @Override
     @FXML
     public void fieldPressed (ActionEvent event) {
         Button eventButton = (Button) event.getSource();
         Player currentPlayer = playerService.getCurrentPlayer();
+
+        moveText.setText(
+                playerService.getStepOrder() % 2 == 0 ? "Ход Player1" : "Ход Player2"
+        );
 
         switch (eventButton.getId()) {
             case ("field1") -> makeStepAccordingToField(field1,0, currentPlayer);
@@ -106,11 +117,13 @@ public class GuiGameControllerImpl implements GuiGameController {
                 a.setContentText("Нолики победили!");
                 a.showAndWait();
                 playerService.incrementPlayer1Score();
+                playerScore1.setText(Integer.toString(playerService.getPlayer1Score()));
             }
             if (gameOverStatus == 1) {
                 a.setContentText("Крестики победили!");
                 a.showAndWait();
                 playerService.incrementPlayer2Score();
+                playerScore2.setText(Integer.toString(playerService.getPlayer2Score()));
             }
             if (gameOverStatus == -1) {
                 a.setContentText("Ничья!");
@@ -119,9 +132,9 @@ public class GuiGameControllerImpl implements GuiGameController {
             fieldService.clearField();
             playerService.setStepOrder(1);
             clearStage();
-            //TODO: show updates scores
         }
     }
+
 
     @Override
     @FXML

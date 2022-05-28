@@ -1,7 +1,6 @@
 package tictactoe.service.impl;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import tictactoe.model.Field;
 import tictactoe.model.Player;
 import tictactoe.service.FieldService;
@@ -11,9 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Data
 public class FieldServiceImpl implements FieldService {
-    @Getter
-    @Setter
     private Field field;
 
     public FieldServiceImpl(Field field) {
